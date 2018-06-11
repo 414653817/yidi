@@ -1,12 +1,12 @@
-@extends('admin_layouts.default')
+@extends('console.layouts.default')
 
 @section('content')
 
 {{--导航--}}
-@include('admin_shared._header')
+@include('console.shared._header')
 
 {{--菜单--}}
-@include('admin_shared._aside')
+@include('console.shared._aside')
 
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 
@@ -39,7 +39,7 @@
 </div>
 
 
-@include('admin_shared._footer')
+@include('console.shared._footer')
 
 
 <!--请在下方写此页面业务相关的脚本-->

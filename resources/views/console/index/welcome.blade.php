@@ -1,4 +1,4 @@
-@extends('admin_layouts.default')
+@extends('console.layouts.default')
 @section('title', '我的桌面')
 
 @section('content')
