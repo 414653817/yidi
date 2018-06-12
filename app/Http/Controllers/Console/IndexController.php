@@ -12,8 +12,8 @@ class IndexController extends BaseController
     {
         //获取所有菜单
         $groups = AdminPower::powerGroup();
-        print_r($groups);exit;
-        return view('console/index/index');
+
+        return view('console/index/index', compact('groups'));
     }
 
     public function welcome()
@@ -21,6 +21,7 @@ class IndexController extends BaseController
         return view('console/index/welcome');
     }
 }
+
 
 
 
