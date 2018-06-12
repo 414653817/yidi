@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Console;
 
-use App\Models\Admin;
-use App\Models\AdminPower;
-use App\Models\AdminRole;
+
+use App\Services\AuthService;
 use Illuminate\Http\Request;
 
 class RoleController extends BaseController
@@ -14,8 +13,7 @@ class RoleController extends BaseController
      */
     public function index()
     {
-        $roles = AdminRole::all();
-
+        $roles = AuthService::getAllRoles();
 
         return view('console.role.index', compact('roles'));
     }
@@ -26,7 +24,7 @@ class RoleController extends BaseController
     public function create()
     {
 
-        $powers = AdminPower::powerGroup();
+        $powers = AuthService::getPowerGroup();
 
         return view('console.role.create', compact('powers'));
     }
