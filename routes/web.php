@@ -19,7 +19,7 @@ Route::get('/', function () {
 //    Route::get('/', ['as' => 'index','uses' => 'HomeController@index']);
 //});
 
-//后台路由前缀,命名空间
+//后台Console路由前缀,命名空间
 Route::group(['prefix'=>'admin', 'namespace'=>'Console'], function () {
     //后台管理静态主页面
     Route::get('index', 'IndexController@index')->name('admin.index');
@@ -27,7 +27,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Console'], function () {
     Route::get('welcome', 'IndexController@welcome')->name('admin.welcome');
 
     //角色管理
-    Route::resource('role', 'RoleController', ['except' => 'show', 'names' => ['store' => 'role.create', 'update' => 'role.edit']]);
+    //Route::resource('role', 'RoleController', ['except' => 'show', 'names' => ['store' => 'role.create', 'update' => 'role.edit']]);
+    Route::resource('role', 'RoleController', ['except' => 'show']);
 
     //系统设置--以下路由临时添加防报错
     Route::resource('system', 'SystemController');

@@ -8,6 +8,13 @@ class AdminPower extends Model
 {
     protected $table = 'admin_powers';
 
+    protected $fillable = ['label', 'name', 'group', 'sort', 'parent_id', 'icon'];
+
+    public function roles()
+    {
+        return $this->belongsToMany(AdminRole::class, 'admin_role_to_powers', 'power_id', 'role_id');
+    }
+
     /**
      * 获取权限分组
      */
